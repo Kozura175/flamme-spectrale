@@ -239,9 +239,47 @@ nav a.active{color:#e5f8ff}
 @media(max-width:850px){body.home-view .hero{padding-top:145px}body.home-view .orb{width:min(29vh,260px);height:min(29vh,260px)}body.home-view .hero h1{font-size:clamp(36px,8vw,72px)}}
 @media(max-width:570px){body.home-view .hero{padding-top:135px;padding-bottom:20px}body.home-view .orb{width:min(25vh,215px);height:min(25vh,215px)}body.home-view .hero h1{font-size:clamp(34px,10vw,58px)}body.home-view .hero-copy{font-size:12px}body.home-view .vip-tag{font-size:7px;padding:7px 9px}body.home-view .prestige-crest{display:none}body.home-view .hero-motto{display:none}body.home-view .eyebrow{font-size:8px}body.home-view .primary{padding:12px 17px;font-size:10px}body.category-view main{padding-top:45px}body.category-view .container{padding-top:80px}}
 @media(max-height:690px){body.home-view .orb{width:23vh;height:23vh}body.home-view .hero h1{font-size:clamp(31px,7vh,70px)}body.home-view .hero-motto{display:none}body.home-view .prestige-crest{display:none}}
+
+/* Édition signature : navigation immersive et mobile */
+.menu-toggle{display:none;position:relative;z-index:32;flex-direction:column;justify-content:center;gap:5px;width:43px;height:43px;padding:10px;border:1px solid #7bd4ff55;border-radius:8px;background:#09223c;color:#e3f7ff;cursor:pointer}
+.menu-toggle span{display:block;width:100%;height:2px;border-radius:3px;background:#c1eaff;transition:transform .25s,opacity .25s}
+.menu-toggle[aria-expanded="true"] span:first-child{transform:translateY(7px) rotate(45deg)}
+.menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-toggle[aria-expanded="true"] span:last-child{transform:translateY(-7px) rotate(-45deg)}
+.section-watermark{position:fixed;left:20px;bottom:24px;z-index:3;font:600 9px 'Cinzel',serif;letter-spacing:.28em;color:#a6dfff54;pointer-events:none}
+nav a{position:relative;padding:8px 0}
+nav a:after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:#b6ecff;transition:right .3s}
+nav a:hover:after,nav a.active:after{right:0}
+body.category-view main{display:flex;flex-direction:column;justify-content:flex-start}
+body.category-view .container,body.category-view .archive{width:100%}
+body.category-view .section-head h2{filter:drop-shadow(0 0 22px #3783bd30)}
+body.category-view #activites .activity{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+body.category-view #activites .activity article{height:100%;min-height:240px}
+body.category-view #activites .activity article:last-child{grid-column:1/-1;min-height:160px}
+body.category-view #activites .activity article:nth-child(3){grid-column:1/-1;min-height:200px}
+body.category-view #activites .activity article h3{color:#e5f7ff}
+body.category-view #activites .activity article:last-child h3{color:#a8e4ff}
+@media(max-width:900px){
+.menu-toggle{display:flex}
+.navwrap{position:relative;padding:14px 20px}
+#site-nav{position:absolute;top:calc(100% + 1px);right:16px;left:16px;z-index:31;display:none;flex-direction:column;align-items:stretch;gap:3px;padding:14px;background:linear-gradient(145deg,#0b2947f5,#061326f8);border:1px solid #82d2ff66;border-radius:12px;box-shadow:0 24px 70px #000b,0 0 35px #2488d333;backdrop-filter:blur(25px)}
+#site-nav.open{display:flex}
+#site-nav a{padding:14px 17px;border-radius:7px;font-size:12px;letter-spacing:.1em}
+#site-nav a.active,#site-nav a:hover{background:#2d83bf25;color:#e4faff}
+#site-nav a:after{display:none}
+}
+@media(max-width:650px){
+body.category-view #activites .activity{grid-template-columns:1fr}
+body.category-view #activites .activity article:nth-child(3),body.category-view #activites .activity article:last-child{grid-column:auto}
+.section-watermark{font-size:7px;left:12px;bottom:10px}
+.logo{font-size:12px;letter-spacing:.06em}
+.logo-mark{width:28px;height:28px;flex:none}
+body.home-view .hero{padding-top:95px}
+}
+@media(max-width:380px){.logo{font-size:10px}.navwrap{padding:12px}.menu-toggle{width:39px;height:39px}}
 </style></head><body><a class="skip-link" href="#pouvoir">Aller au contenu</a><canvas id="stars" aria-hidden="true"></canvas>
-<header><div class="navwrap"><a href="#accueil" class="logo"><span class="logo-mark">✦</span> FLAMME SPECTRALE</a><nav aria-label="Navigation principale"><a href="#accueil">Accueil</a><a href="#pouvoir">Le pouvoir</a><a href="#gerance">Gérance</a><a href="#activites">Activités</a><a href="#archives">Archives</a></nav></div></header>
-<div class="reading-progress" aria-hidden="true"></div><div class="side-index" aria-hidden="true"><span>F</span><i></i><span>S</span></div><main><section class="hero" id="accueil"><div class="royal-frame" aria-hidden="true"><span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span></div><div class="hero-light-beam" aria-hidden="true"></div><div class="orb" aria-hidden="true"><div class="orb-ring"></div>
+<header><div class="navwrap"><a href="#accueil" class="logo"><span class="logo-mark">✦</span> FLAMME SPECTRALE</a><button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button><nav id="site-nav" aria-label="Navigation principale"><a href="#accueil">Accueil</a><a href="#pouvoir">Le pouvoir</a><a href="#gerance">Gérance</a><a href="#activites">Activités</a><a href="#archives">Archives</a></nav></div></header>
+<div class="reading-progress" aria-hidden="true"></div><div class="section-watermark" aria-hidden="true">FLAMME SPECTRALE</div><div class="side-index" aria-hidden="true"><span>F</span><i></i><span>S</span></div><main><section class="hero" id="accueil"><div class="royal-frame" aria-hidden="true"><span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span></div><div class="hero-light-beam" aria-hidden="true"></div><div class="orb" aria-hidden="true"><div class="orb-ring"></div>
 <svg class="flame" viewBox="0 0 260 300" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="outer" x1="0" y1="1" x2=".65" y2="0"><stop stop-color="#c6ffff"/><stop offset=".22" stop-color="#23d5ff"/><stop offset=".62" stop-color="#0a77e3"/><stop offset="1" stop-color="#12358d"/></linearGradient><linearGradient id="inner" x1="0" y1="1" x2=".6" y2="0"><stop stop-color="#fff"/><stop offset=".45" stop-color="#b8faff"/><stop offset="1" stop-color="#1dbaff"/></linearGradient><filter id="warp"><feTurbulence type="fractalNoise" baseFrequency=".014 .032" numOctaves="2" seed="3" result="noise"><animate attributeName="baseFrequency" values=".014 .032;.022 .043;.014 .032" dur="2.6s" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
 <g class="fire-body" filter="url(#warp)"><path d="M130 7C157 62 111 92 148 131C157 94 190 74 184 37C229 90 236 135 211 179C241 155 244 130 236 109C288 190 245 278 158 290C76 304 19 252 35 182C44 142 76 119 77 85C100 132 90 153 106 178C104 127 122 77 130 7Z" fill="url(#outer)"/><path d="M131 98C146 142 128 157 145 185C159 157 174 149 171 117C206 165 207 206 188 238C208 222 214 204 214 190C227 247 181 291 130 291C79 291 55 251 72 211C80 234 94 246 102 247C92 210 117 185 111 155C127 179 131 197 131 213C140 181 120 152 131 98Z" fill="#30d6ff"/><path d="M133 179C143 205 130 224 146 236C156 219 161 205 158 194C183 227 182 258 160 277C142 294 111 290 97 271C84 251 96 232 103 219C107 242 118 249 126 254C118 229 128 205 133 179Z" fill="url(#inner)"/></g></svg>
 <i class="ember"></i><i class="ember"></i><i class="ember"></i><i class="ember"></i></div>
@@ -263,5 +301,14 @@ if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserve
 (()=>{const pages=['accueil','pouvoir','gerance','activites','archives'];const sections=Object.fromEntries(pages.map(id=>[id,document.getElementById(id)]));const dividers=[...document.querySelectorAll('.divider')];const oath=document.querySelector('.oath-section');const recipients=document.querySelector('.recipients');const footer=document.querySelector('footer');const nav=[...document.querySelectorAll('nav a')];
 function show(id){if(!pages.includes(id))id='accueil';document.body.classList.toggle('home-view',id==='accueil');document.body.classList.toggle('category-view',id!=='accueil');for(const key of pages)sections[key].hidden=key!==id;dividers.forEach(el=>el.hidden=true);if(oath)oath.hidden=true;if(recipients)recipients.hidden=id!=='archives';if(footer)footer.hidden=id==='accueil';nav.forEach(a=>{const active=a.getAttribute('href')==='#'+id;a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});window.scrollTo(0,0)}
 document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href').slice(1);if(!pages.includes(id))return;e.preventDefault();if(location.hash!=='#'+id)history.pushState(null,'','#'+id);show(id)}));addEventListener('popstate',()=>show(location.hash.slice(1)));addEventListener('hashchange',()=>show(location.hash.slice(1)));show(location.hash.slice(1));
+})();
+</script><script>
+(()=>{const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('#site-nav');if(!toggle||!nav)return;
+function close(){toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Ouvrir le menu');nav.classList.remove('open')}
+toggle.addEventListener('click',()=>{const opened=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!opened));toggle.setAttribute('aria-label',opened?'Ouvrir le menu':'Fermer le menu');nav.classList.toggle('open',!opened)});
+nav.addEventListener('click',e=>{if(e.target.closest('a'))close()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){close();toggle.blur()}});
+document.addEventListener('click',e=>{if(!nav.contains(e.target)&&!toggle.contains(e.target))close()});
+addEventListener('resize',()=>{if(innerWidth>900)close()});
 })();
 </script></body></html>
