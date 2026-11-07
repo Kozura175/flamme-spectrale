@@ -88,13 +88,57 @@ nav a.active{color:#d8f5ff}
 @keyframes orbFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 @media(max-width:570px){.orb{animation:none}.hero{min-height:700px}.recipient-box{padding-left:0;padding-right:0}}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+
+/* Édition prestige : luxe nocturne et éclat de saphir */
+:root{--line:rgba(133,202,255,.26);--ice:#ecfaff;--muted:#a9bfd8}
+body{background:#020711}
+body:before{background:radial-gradient(ellipse 50% 30% at 50% 9%,#1a5ca07a,transparent 85%),radial-gradient(ellipse 40% 50% at 8% 70%,#0b28515c,transparent 80%),radial-gradient(ellipse 40% 50% at 94% 78%,#0c35685c,transparent 80%),#020711}
+header{border-bottom:1px solid #8ccfff48}
+.navwrap{max-width:1350px;padding:24px 38px}
+.logo{font-size:18px;letter-spacing:.17em;color:#e5f8ff;text-shadow:0 0 20px #63c7ff5c}
+.logo-mark{width:41px;height:41px;background:radial-gradient(circle,#1b5c95,#071b36);border-color:#a7e6ffab;box-shadow:0 0 24px #40b5ff78}
+.hero{min-height:940px;min-height:100svh;padding-top:120px;background:radial-gradient(ellipse 37% 39% at 50% 34%,#2273c13b,transparent 80%)}
+.hero:before{width:1000px;height:1000px;top:-8%;background:radial-gradient(circle,#237bca3b,#104b8622 36%,transparent 69%)}
+.hero:after{height:220px}
+.orb{width:385px;height:385px;margin-bottom:15px;filter:drop-shadow(0 0 70px #1589f4bb)}
+.orb-ring{width:350px;height:350px;border:1px solid #9cddff85;box-shadow:0 0 95px #158af66b,0 0 170px #0c5cba3b,inset 0 0 80px #2089e650}
+.orb-ring:before{inset:-27px;border-color:#9bdfff47}
+.orb-ring:after{inset:30px;border-color:#b0eaff6b}
+.flame{width:310px;height:360px;filter:drop-shadow(0 0 22px #7fe4ff) drop-shadow(0 0 65px #1689f8)}
+.vip-tag{display:flex;align-items:center;justify-content:center;gap:16px;border:1px solid #a0dfff78;background:linear-gradient(90deg,#081c33,#124b78a3,#081c33);padding:12px 26px;margin:4px 0 24px;box-shadow:0 0 35px #238fe542,inset 0 1px #c1f0ff42;font:700 10px 'DM Sans',sans-serif;letter-spacing:.27em;color:#d6f3ff}
+.vip-diamond{color:#b6eaff;text-shadow:0 0 13px #9bdfff;font-size:16px}
+.hero h1{font-size:clamp(58px,9.2vw,135px);letter-spacing:.09em;line-height:1.08;margin:19px 0 25px;text-shadow:0 0 80px #439bf97a}
+.hero h1 span{filter:drop-shadow(0 0 20px #69cfff72)}
+.hero-copy{font-size:16px;max-width:650px;color:#c4d9ef}
+.hero-motto{margin-top:55px;color:#8cbfe9;font:600 10px 'DM Sans',sans-serif;letter-spacing:.3em;text-shadow:0 0 14px #5ebdff7a}
+.primary{padding:19px 32px;font-size:12px;border-color:#b3eaffc2;background:linear-gradient(125deg,#1b679e,#092f59);box-shadow:0 0 45px #2d9bea4a,inset 0 1px #e1faff58}
+.primary:hover{box-shadow:0 0 65px #4fb8ff9e}
+.container{max-width:1230px;padding-top:130px;padding-bottom:130px}
+.section-tag{color:#9edcff;font-size:11px}
+h2{font-size:clamp(35px,4.6vw,60px);letter-spacing:.045em}
+.section-head{margin-bottom:56px}
+.panel{padding:48px;border-color:#8bcfff45;background:linear-gradient(135deg,#102f50ed,#061427f7);box-shadow:0 25px 85px #0006,inset 0 1px #b7eaff2c}
+.panel:before{height:2px;background:linear-gradient(90deg,transparent,#c5efffa8,transparent)}
+.panel h3{font-size:clamp(23px,2.6vw,33px)}
+.quote-panel{background:radial-gradient(circle at 65% 35%,#194c7b80,transparent 75%),#061426}
+.feature,.role,.activity article{border-color:#8bcfff45;background:linear-gradient(145deg,#102b4aeb,#061427f2);box-shadow:0 20px 65px #0005,inset 0 1px #b6eaff1c}
+.feature{padding:38px}.feature .symbol{font-size:39px;text-shadow:0 0 24px #6acaffb0}
+.role{padding:50px}.role .number{color:#89cfff}.role h3{font-size:25px}
+.activity article{padding:40px}.activity .num{color:#90d8ff}
+.archive{max-width:1230px;padding:105px 40px;border-color:#a2dfff69;background:radial-gradient(ellipse at 50% 0%,#226ba17d,transparent 72%),linear-gradient(135deg,#0b2746,#030f22);box-shadow:0 25px 100px #0009,0 0 60px #1a72bd26}
+.archive:before,.archive:after{border-color:#b5eaff4b}
+.recipients{max-width:1230px}.recipient-box{border-color:#a1dfff8c;padding-top:55px;padding-bottom:55px}
+.names span{padding:20px 30px;background:linear-gradient(135deg,#16456c,#0a2545);border-color:#9bd9ff73;box-shadow:0 0 28px #1a75c535}
+@media(max-width:850px){.orb{width:310px;height:310px}.orb-ring{width:280px;height:280px}.flame{width:250px;height:290px}.hero{min-height:850px}}
+@media(max-width:570px){.hero{min-height:790px;padding-top:85px}.orb{width:275px;height:275px;transform:scale(.9)}.orb-ring{width:250px;height:250px}.flame{width:225px;height:265px}.vip-tag{font-size:8px;letter-spacing:.12em;padding:11px 13px;gap:8px}.hero h1{font-size:clamp(42px,12vw,65px);letter-spacing:.02em}.hero-motto{font-size:8px;letter-spacing:.14em}.container{padding-top:85px;padding-bottom:85px}.panel,.role{padding:30px}.archive{padding:75px 22px}}
+@media(prefers-reduced-motion:reduce){.orb{animation:none}}
 </style></head><body><canvas id="stars" aria-hidden="true"></canvas>
 <header><div class="navwrap"><a href="#accueil" class="logo"><span class="logo-mark">✦</span> FLAMME SPECTRALE</a><nav aria-label="Navigation principale"><a href="#pouvoir">Le pouvoir</a><a href="#gerance">Gérance</a><a href="#activites">Activités</a><a href="#archives">Archives</a></nav></div></header>
 <main><section class="hero" id="accueil"><div class="orb" aria-hidden="true"><div class="orb-ring"></div>
 <svg class="flame" viewBox="0 0 260 300" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="outer" x1="0" y1="1" x2=".65" y2="0"><stop stop-color="#c6ffff"/><stop offset=".22" stop-color="#23d5ff"/><stop offset=".62" stop-color="#0a77e3"/><stop offset="1" stop-color="#12358d"/></linearGradient><linearGradient id="inner" x1="0" y1="1" x2=".6" y2="0"><stop stop-color="#fff"/><stop offset=".45" stop-color="#b8faff"/><stop offset="1" stop-color="#1dbaff"/></linearGradient><filter id="warp"><feTurbulence type="fractalNoise" baseFrequency=".014 .032" numOctaves="2" seed="3" result="noise"><animate attributeName="baseFrequency" values=".014 .032;.022 .043;.014 .032" dur="2.6s" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
 <g class="fire-body" filter="url(#warp)"><path d="M130 7C157 62 111 92 148 131C157 94 190 74 184 37C229 90 236 135 211 179C241 155 244 130 236 109C288 190 245 278 158 290C76 304 19 252 35 182C44 142 76 119 77 85C100 132 90 153 106 178C104 127 122 77 130 7Z" fill="url(#outer)"/><path d="M131 98C146 142 128 157 145 185C159 157 174 149 171 117C206 165 207 206 188 238C208 222 214 204 214 190C227 247 181 291 130 291C79 291 55 251 72 211C80 234 94 246 102 247C92 210 117 185 111 155C127 179 131 197 131 213C140 181 120 152 131 98Z" fill="#30d6ff"/><path d="M133 179C143 205 130 224 146 236C156 219 161 205 158 194C183 227 182 258 160 277C142 294 111 290 97 271C84 251 96 232 103 219C107 242 118 249 126 254C118 229 128 205 133 179Z" fill="url(#inner)"/></g></svg>
 <i class="ember"></i><i class="ember"></i><i class="ember"></i><i class="ember"></i></div>
-<div class="eyebrow">Le feu au-delà du monde visible</div><h1>FLAMME<span>SPECTRALE</span></h1><p class="hero-copy">Une flamme qui ne connaît ni le temps ni l'oubli. Dans l'obscurité, sa lumière révèle une puissance venue d'ailleurs.</p><a class="primary" href="#pouvoir">Découvrir les archives <span aria-hidden="true">↗</span></a><div class="scroll-indicator">Défiler pour explorer ↓</div></section>
+<div class="vip-tag"><span class="vip-diamond">✦</span> LE SANCTUAIRE DE LA FLAMME SPECTRALE <span class="vip-diamond">✦</span></div><div class="eyebrow">Le feu au-delà du monde visible</div><h1>FLAMME<span>SPECTRALE</span></h1><p class="hero-copy">Une flamme qui ne connaît ni le temps ni l'oubli. Dans l'obscurité, sa lumière révèle une puissance venue d'ailleurs.</p><a class="primary" href="#pouvoir">Découvrir les archives <span aria-hidden="true">↗</span></a><div class="hero-motto">✧ &nbsp; L’OMBRE EST NOTRE ROYAUME &nbsp; ✧</div><div class="scroll-indicator">Défiler pour explorer ↓</div></section>
 <div class="divider"></div><section class="container" id="pouvoir"><div class="section-head"><div class="section-tag">01 / Identité</div><h2>L'essence de la<br>Flamme Spectrale</h2><p>Un pouvoir dont les flammes bleues traversent l'ombre, à la frontière du visible et de l'inconnu.</p></div>
 <div class="identity-layout"><article class="panel"><div class="panel-label">Le porteur du pouvoir</div><h3>Douzh<br><span style="color:#8fd2ff">Démon de la Flamme Spectrale</span></h3><p>Je me nomme <strong>Douzh</strong>, démon de la <strong>Flamme Spectrale</strong>. Ma raison de vivre est de satisfaire le Maître et de servir ses ambitions avec une détermination sans faille.</p></article><article class="panel quote-panel"><div class="glyph">“</div><p>La flamme spectrale ne s'éteint jamais. Elle attend, silencieuse, dans l'obscurité.</p></article></div>
 <div class="panel" style="margin-top:22px"><div class="panel-label">Les ambitions de Douzh</div><h3>Mes objectifs</h3><p>Je souhaite devenir un démon réputé pour mon art à la <strong>Griffe</strong>, perfectionner ma maîtrise du combat et faire reconnaître mon talent. Mon ambition est également d’intégrer le <strong>cercle privé du Maître</strong> et de gagner sa confiance.</p></div>
