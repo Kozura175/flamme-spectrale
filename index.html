@@ -1,158 +1,72 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Flamme Spectrale — Archives démoniaques</title><style>
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@400;600&display=swap');
-:root{--cyan:#65f9f2;--violet:#9b63ff}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#020409;color:#e8f6ff;font-family:Inter,Arial,sans-serif;overflow-x:hidden}#embers,#mist{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}#mist{z-index:0;opacity:.7}#embers{z-index:3;opacity:.8}header,main,footer{position:relative;z-index:2}header{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:20px max(25px,6vw);border-bottom:1px solid #6ee8e52b;background:#020409df;backdrop-filter:blur(12px)}.brand{font-family:Cinzel,serif;letter-spacing:.16em;color:#b6ffff}nav{display:flex;gap:18px;flex-wrap:wrap}a{color:#d2dfe9;text-decoration:none}nav a{font-size:12px}nav a:hover{color:var(--cyan)}.hero{min-height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:75px 20px;position:relative}.hero:before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,#0b45555b,#1a0a3855 35%,transparent 75%);pointer-events:none}.seal{width:175px;height:175px;border:2px solid #80fffb;border-radius:50%;display:grid;place-items:center;position:relative;background:radial-gradient(circle,#143e57,#08091d 67%,#03040a);box-shadow:0 0 28px #57fdf5,0 0 110px #6c36e566,inset 0 0 45px #58ffeb4f;animation:breath 3s ease-in-out infinite}.seal:before,.seal:after{content:'';position:absolute;inset:-17px;border:1px dashed #77fef4aa;border-radius:50%;animation:spin 17s linear infinite}.seal:after{inset:-31px;border-color:#9768f988;animation-direction:reverse;animation-duration:23s}.seal svg{width:98px;filter:drop-shadow(0 0 13px #73fff6) drop-shadow(0 0 24px #8c59ff)}.eyebrow{margin-top:52px;font-size:12px;letter-spacing:.3em;color:#86eee8}h1,h2,h3{font-family:Cinzel,serif}h1{font-size:clamp(3rem,9vw,7.5rem);line-height:1.08;margin:22px 0 14px;text-shadow:0 0 28px #55e9e7a0}h1 span{display:block;color:#9e7bff}p{line-height:1.8;color:#afc4d4}.hero p{max-width:620px}.cta{margin-top:27px;border:1px solid #83fff5;border-radius:30px;padding:15px 28px;color:#caffff;background:#0b313b99;box-shadow:0 0 24px #47ffed33}.cta:hover{box-shadow:0 0 38px #47ffed8c}.wrap{max-width:1100px;margin:auto;padding:85px 24px}.kicker{color:#69e9e3;letter-spacing:.3em;font-size:11px}.wrap h2{font-size:clamp(1.7rem,4vw,3rem);color:#d7fafa;text-shadow:0 0 18px #4fe5f75e}.lead{max-width:750px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}.card{background:linear-gradient(135deg,#0a1c2bda,#100c22e8);border:1px solid #62dce344;border-radius:15px;padding:28px;min-height:180px;transition:.25s}.card:hover{transform:translateY(-5px);border-color:#86fff8;box-shadow:0 0 35px #54effa23}.card .icon{font-size:29px}.card h3{font-size:16px;color:#adfff9}.card p{font-size:13px}.line{height:1px;background:linear-gradient(90deg,transparent,#6affed66,transparent)}.banner{padding:85px 20px;text-align:center;background:radial-gradient(ellipse at center,#19274a70,transparent 68%)}footer{text-align:center;padding:40px 20px;border-top:1px solid #70e7e32c;font-size:12px;color:#8194a6}footer strong{display:block;color:#87fff6;font-family:Cinzel,serif;letter-spacing:.2em;margin-bottom:10px}@keyframes breath{50%{box-shadow:0 0 46px #86fff9,0 0 145px #8258e7a1,inset 0 0 50px #5bfff5a6}}@keyframes spin{to{transform:rotate(360deg)}}@media(max-width:760px){.grid{grid-template-columns:1fr}header{flex-direction:column;text-align:center}nav{justify-content:center}.wrap{padding:60px 20px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}}
-
-/* Palette nocturne bleu-noir et flamme spectrale vive au centre. */
-html,body{background:#010713}
-body{background:radial-gradient(ellipse at 50% 9%,#06234c 0%,#020b1c 38%,#01040d 80%);background-attachment:fixed}
-header{background:#010817e8;border-bottom-color:#256da866}
-.hero:before{background:radial-gradient(ellipse at 50% 41%,#0c49755e 0%,#031b3b5c 38%,transparent 74%)}
-.card{background:linear-gradient(135deg,#071b31ee,#030a1bed);border-color:#347b9e70}
-.banner{background:radial-gradient(ellipse at center,#07345780,transparent 75%)}
-.seal{width:205px;height:205px;overflow:visible;background:radial-gradient(circle,#123d70 0%,#071e42 48%,#020a1d 80%);border-color:#82dfff;box-shadow:0 0 32px #40c9ffb0,0 0 110px #177eea88,inset 0 0 45px #2e9cfa77}
-.flame-halo{position:absolute;inset:13px;border-radius:50%;background:radial-gradient(circle,#31eaff77,transparent 65%);filter:blur(13px);animation:fire-breathe 2s ease-in-out infinite}
-.flame-shape{position:absolute;bottom:23px;left:50%;transform-origin:50% 95%;border-radius:48% 52% 47% 53% / 65% 66% 34% 35%;clip-path:polygon(50% 0,63% 22%,79% 36%,90% 57%,84% 80%,67% 96%,32% 100%,13% 83%,8% 62%,23% 42%,29% 21%,40% 35%);filter:drop-shadow(0 0 12px #31f9ff);animation:flame-dance 1.45s ease-in-out infinite alternate}
-.flame-back{width:135px;height:169px;margin-left:-67px;background:linear-gradient(180deg,#3c8cff 2%,#00a8ff 38%,#53ffff 82%,#d9ffff);opacity:.82;animation-duration:1.6s}
-.flame-mid{width:103px;height:151px;margin-left:-51px;bottom:27px;background:linear-gradient(180deg,#277dff,#15f0ff 57%,#baffff);animation-delay:-.6s}
-.flame-front{width:76px;height:115px;margin-left:-38px;bottom:27px;background:linear-gradient(180deg,#1de6ff,#baffff 65%,#fff);animation-duration:1.1s;animation-delay:-.3s}
-.flame-core{width:40px;height:76px;margin-left:-20px;bottom:31px;background:linear-gradient(180deg,#a1faff,#fff);filter:drop-shadow(0 0 17px #fff);animation-duration:.9s}
-.flame-spark{position:absolute;bottom:64px;width:5px;height:12px;border-radius:50%;background:#94ffff;box-shadow:0 0 14px #4bffff;animation:spark-rise 2s ease-out infinite}
-.s1{left:31%;animation-delay:-.1s}.s2{left:65%;animation-delay:-.9s}.s3{left:43%;animation-delay:-1.4s}.s4{left:57%;animation-delay:-1.8s}
-@keyframes flame-dance{0%{transform:translateX(-3px) rotate(-5deg) scale(.95,1.02)}50%{transform:translateX(4px) rotate(4deg) scale(1.04,.97)}100%{transform:translateX(-2px) rotate(-2deg) scale(.98,1.07)}}
-@keyframes spark-rise{0%{opacity:0;transform:translate(0,0) scale(.5)}20%{opacity:1}100%{opacity:0;transform:translate(19px,-125px) scale(.1)}}
-@keyframes fire-breathe{50%{opacity:.65;transform:scale(1.13)}}
-@media(prefers-reduced-motion:reduce){.flame-shape,.flame-spark,.flame-halo{animation:none!important}}
-
-/* V3: immense brasier spectral bleu et ambiance azur nocturne */
-html,body{background:#031638}
-body{background:radial-gradient(ellipse at 50% 22%,#1256a0 0%,#0b3674 28%,#061d4b 55%,#020d27 100%);background-attachment:fixed}
-header{background:#031433df;border-bottom-color:#57b9ff66}
-.hero{min-height:96vh}
-.hero:before{background:radial-gradient(ellipse at 50% 43%,#1583dd6b 0%,#0a428777 40%,transparent 78%)}
-.seal{width:315px;height:315px;background:radial-gradient(circle,#0a56a4 0%,#073e88 43%,#041945 76%);border:2px solid #89eaff;box-shadow:0 0 48px #2bbcff,0 0 175px #167cffaa,inset 0 0 80px #2ac8ff77;animation:breath 2.4s ease-in-out infinite}
-.seal:before{inset:-18px;border-color:#84edffbb}.seal:after{inset:-35px;border-color:#319fff88}
-.flame-halo{inset:-10px;background:radial-gradient(circle,#21dfff8c,transparent 69%);filter:blur(23px)}
-.flame-shape{bottom:28px;filter:drop-shadow(0 0 24px #30dfff);clip-path:polygon(50% 0,60% 15%,69% 5%,75% 26%,86% 39%,93% 57%,85% 82%,68% 98%,33% 100%,13% 83%,5% 58%,19% 36%,25% 12%,39% 30%)}
-.flame-back{width:255px;height:290px;margin-left:-127px;background:linear-gradient(180deg,#1b65ff 0%,#0097ff 34%,#00d8ff 68%,#abffff 100%);opacity:.9}
-.flame-mid{width:203px;height:263px;margin-left:-101px;bottom:29px;background:linear-gradient(180deg,#1378ff,#02d5ff 55%,#c5ffff)}
-.flame-front{width:151px;height:214px;margin-left:-75px;bottom:29px;background:linear-gradient(180deg,#18b7ff,#60ffff 60%,#fff)}
-.flame-core{width:93px;height:157px;margin-left:-46px;bottom:31px;background:linear-gradient(180deg,#74efff,#eaffff 66%,#fff);filter:drop-shadow(0 0 30px #fff)}
-.flame-spark{bottom:95px;width:7px;height:17px;box-shadow:0 0 20px #78ffff}
-@keyframes spark-rise{0%{opacity:0;transform:translate(0,0) scale(.5)}20%{opacity:1}100%{opacity:0;transform:translate(26px,-210px) scale(.1)}}
-.card{background:linear-gradient(135deg,#0a3266eb,#051a40ee);border-color:#459bdb88}
-.banner{background:radial-gradient(ellipse at center,#11559b90,transparent 75%)}
-@media(max-width:500px){.seal{width:250px;height:250px}.flame-back{width:208px;height:235px;margin-left:-104px}.flame-mid{width:167px;height:215px;margin-left:-83px}.flame-front{width:124px;height:176px;margin-left:-62px}.flame-core{width:78px;height:132px;margin-left:-39px}}
-
-/* V4 — bleu abyssal mystérieux et apparitions de flammes errantes */
-html,body{background:#010716}
-body{background:radial-gradient(ellipse at 48% 18%,#0b2756 0%,#061634 31%,#030d22 60%,#010511 100%);background-attachment:fixed}
-.hero:before{background:radial-gradient(ellipse at 50% 42%,#104a7a4f 0%,#0a234a42 42%,transparent 79%)}
-header{background:#020a1ce8;border-bottom-color:#3876b655}
-.card{background:linear-gradient(135deg,#091c39ef,#050d23f2);border-color:#3374ac60}
-.banner{background:radial-gradient(ellipse at center,#0b285b77,transparent 75%)}
-.wandering-flames{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:1}
-.wandering-flames i{position:absolute;bottom:-120px;left:var(--x);width:var(--sz);height:calc(var(--sz)*1.65);opacity:0;filter:drop-shadow(0 0 14px #25bfff) drop-shadow(0 0 30px #1969f0);background:linear-gradient(180deg,#1a5cde 2%,#159df5 42%,#59eaff 76%,#d7ffff 100%);clip-path:polygon(50% 0,65% 23%,79% 38%,92% 60%,78% 86%,54% 100%,24% 93%,8% 69%,20% 45%,31% 18%,40% 35%);transform-origin:50% 90%;animation:ghostflame var(--dur) ease-in-out var(--delay) infinite}
-.wandering-flames i:nth-child(1){--x:4%;--sz:34px;--dur:11s;--delay:-2s}
-.wandering-flames i:nth-child(2){--x:13%;--sz:24px;--dur:14s;--delay:-8s}
-.wandering-flames i:nth-child(3){--x:23%;--sz:42px;--dur:13s;--delay:-5s}
-.wandering-flames i:nth-child(4){--x:34%;--sz:27px;--dur:16s;--delay:-11s}
-.wandering-flames i:nth-child(5){--x:43%;--sz:36px;--dur:12s;--delay:-3s}
-.wandering-flames i:nth-child(6){--x:54%;--sz:23px;--dur:15s;--delay:-9s}
-.wandering-flames i:nth-child(7){--x:62%;--sz:41px;--dur:14s;--delay:-1s}
-.wandering-flames i:nth-child(8){--x:71%;--sz:30px;--dur:12s;--delay:-7s}
-.wandering-flames i:nth-child(9){--x:81%;--sz:35px;--dur:17s;--delay:-13s}
-.wandering-flames i:nth-child(10){--x:91%;--sz:26px;--dur:13s;--delay:-4s}
-.wandering-flames i:nth-child(11){--x:96%;--sz:40px;--dur:16s;--delay:-10s}
-.wandering-flames i:nth-child(12){--x:48%;--sz:28px;--dur:18s;--delay:-15s}
-@keyframes ghostflame{0%{opacity:0;transform:translate3d(0,0,0) rotate(-8deg) scale(.5)}13%{opacity:.58}35%{opacity:.7;transform:translate3d(28px,-35vh,0) rotate(9deg) scale(1)}60%{opacity:.46;transform:translate3d(-20px,-66vh,0) rotate(-7deg) scale(.8)}85%{opacity:.28}100%{opacity:0;transform:translate3d(20px,-115vh,0) rotate(10deg) scale(.3)}}
-@media(prefers-reduced-motion:reduce){.wandering-flames i{animation:none!important;opacity:.12;bottom:15%}}
-.identity{margin-top:34px;padding:30px;border-radius:16px;border:1px solid #57b8e67a;background:linear-gradient(125deg,#081b3ddd,#061026e8);box-shadow:0 0 40px #0c5db222}.identity h3{font-size:clamp(1.1rem,2.5vw,1.6rem);color:#b1efff;margin:17px 0}.identity p{max-width:800px}.identity strong{color:#d7ffff}
-/* Flamme organique à contours fluides : remplace les anciens polygones. */
-.seal .flame-shape{display:none}
-.seal{overflow:visible}
-.real-fire{position:absolute;width:114%;height:127%;left:-7%;bottom:-8%;overflow:visible;filter:drop-shadow(0 0 12px #18baff) drop-shadow(0 0 32px #128bff)}
-.fire-flicker{transform-origin:50% 88%;animation:organic-fire 1.9s ease-in-out infinite alternate}
-@keyframes organic-fire{0%{transform:rotate(-2deg) scaleX(.97) scaleY(1)}45%{transform:rotate(1.8deg) scaleX(1.025) scaleY(1.055)}100%{transform:rotate(-1deg) scaleX(.98) scaleY(.97)}}
-@media(prefers-reduced-motion:reduce){.fire-flicker{animation:none!important}}
-
-/* Ajustement de l'emblème : flamme centrée et plus imposante */
-.seal{display:flex;align-items:center;justify-content:center}
-.real-fire{width:145%;height:160%;left:50%;bottom:auto;top:50%;transform:translate(-50%,-50%);transform-origin:center center}
-@media(max-width:500px){.real-fire{width:145%;height:160%;left:50%;top:50%;bottom:auto;transform:translate(-50%,-50%)}}
-
-/* Identité visuelle abyssale et typographie mystique */
-@import url('https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Cormorant+Garamond:wght@500;600;700&display=swap');
-:root{--cyan:#a1e8ff;--violet:#6e9fff}
-body{background:radial-gradient(ellipse at 48% 15%,#102d5a 0%,#071831 33%,#020a1b 72%,#01040e 100%);background-attachment:fixed;color:#e5f3ff}
-.brand,h1,h2,h3,.kicker,.eyebrow{font-family:'Marcellus SC',Cinzel,serif}
-.brand{font-size:18px;letter-spacing:.21em;text-shadow:0 0 13px #43b7ffbb}
-h1{letter-spacing:.075em;font-weight:500;text-shadow:0 0 18px #4ba7ffb0,0 0 56px #155ccf77}
-h1 span{color:#9bd6ff;text-shadow:0 0 24px #55a7ff}
-.wrap h2{letter-spacing:.075em;color:#d6edff;text-shadow:0 0 23px #3a85e488}
-h3{letter-spacing:.055em}
-p,.lead{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(19px,2vw,23px);line-height:1.55;color:#c3d6ee}
-nav a,.cta{font-family:'Marcellus SC',serif;letter-spacing:.07em}
-nav a{font-size:13px}
-.kicker,.eyebrow{color:#8cc7ff;letter-spacing:.3em}
-.card{background:linear-gradient(145deg,#071c39e8,#030d22f2);border:1px solid #4b8dcb66;box-shadow:inset 0 1px #8fd8ff13,0 15px 45px #0005;position:relative;overflow:hidden}
-.card:before{content:'';position:absolute;top:0;left:15%;right:15%;height:1px;background:linear-gradient(90deg,transparent,#8ccfff9c,transparent)}
-.card h3{color:#a9d9ff}.card p{font-size:19px}
-.identity{background:linear-gradient(125deg,#091f41ef,#030b20f5);border-color:#4e8fc38a}
-.identity h3{color:#c0e6ff}.identity p{font-size:21px}
-.hero:before{background:radial-gradient(ellipse at 50% 41%,#154c8055,#061b3d55 44%,transparent 78%)}
-.seal{box-shadow:0 0 36px #4da9ffc9,0 0 145px #174b9a9c,inset 0 0 75px #267fd177}
-.banner{background:radial-gradient(ellipse at center,#0d326084,transparent 76%)}
-.line,.divider{background:linear-gradient(90deg,transparent,#5495d766,transparent)}
-@media(max-width:760px){.brand{font-size:15px}nav a{font-size:11px}}
-
-/* Typographie spectrale raffinée */
-@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Philosopher:wght@400;700&display=swap');
-h1,h2,.brand{font-family:'Uncial Antiqua','Marcellus SC',serif!important;font-weight:400!important}
-h1{letter-spacing:.015em!important;line-height:1.3;text-shadow:0 0 11px #80d9ffb9,0 0 34px #167beac9,0 0 75px #073d94!important}
-h2{letter-spacing:.025em!important;line-height:1.35;text-shadow:0 0 13px #67c7ff9c,0 0 37px #1468b58c!important}
-h3,.kicker,.eyebrow,nav a,.cta{font-family:'Philosopher','Marcellus SC',serif!important}
-h3{font-weight:700;letter-spacing:.065em}
-.brand{font-size:clamp(14px,1.6vw,19px)!important;letter-spacing:.025em!important}
-p,.lead,.card p,.identity p{font-family:'Philosopher',Georgia,serif!important;letter-spacing:.012em;line-height:1.7}
-.kicker,.eyebrow{letter-spacing:.24em!important;text-transform:uppercase}
-nav a{font-size:14px!important}
-@media(max-width:650px){h1{font-size:clamp(34px,8vw,56px)}h2{font-size:clamp(28px,6vw,40px)}}
-
-/* Refonte de la direction artistique : bleu nuit, typographie et détails soignés */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Manrope:wght@400;500;600;700&display=swap');
-body{background:radial-gradient(ellipse 75% 34% at 50% 8%,#123c72 0%,#061a37 52%,transparent 100%),radial-gradient(ellipse 80% 30% at 80% 66%,#08244b 0%,transparent 90%),#020813;color:#eaf4ff}
-header{background:#030d20d9;border-bottom:1px solid #4c89c33b;box-shadow:0 10px 45px #0006}
-.brand{font-family:'Cinzel Decorative',serif!important;font-size:clamp(13px,1.35vw,17px)!important;color:#d8f1ff;letter-spacing:.06em!important}
-h1,h2{font-family:'Cinzel Decorative',serif!important;font-weight:400!important;letter-spacing:.01em!important}
-h1{font-size:clamp(3rem,8vw,6.8rem);line-height:1.16;text-shadow:0 0 18px #58baff77,0 0 60px #1768c177!important}
-h1 span{color:#a5dfff}
-h2,.wrap h2{font-size:clamp(1.65rem,3.6vw,2.8rem);color:#dbeeff}
-h3,.kicker,.eyebrow,nav a,.cta{font-family:'Manrope',sans-serif!important}
-h3{font-size:clamp(16px,1.6vw,20px);font-weight:700;letter-spacing:.025em}
-p,.lead,.card p,.identity p{font-family:'Manrope',sans-serif!important;font-size:clamp(14px,1.45vw,16px);line-height:1.85;letter-spacing:0;color:#b7cbe1}
-.hero p{font-size:17px}
-.kicker,.eyebrow{font-size:11px;letter-spacing:.25em!important;color:#7ebcfa}
-nav a{font-size:12px!important;font-weight:600;transition:color .2s}
-nav a:hover{color:#b4e8ff}
-.wrap{max-width:1120px;padding-top:100px;padding-bottom:100px}
-.grid{grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
-.card{background:linear-gradient(150deg,#0a2546df,#040f24ed);border:1px solid #5696d34d;border-radius:20px;padding:32px;box-shadow:0 18px 55px #0005,inset 0 1px #b0eaff15;transition:transform .3s,border-color .3s,box-shadow .3s}
-.card:hover{transform:translateY(-6px);border-color:#84c9ff8c;box-shadow:0 18px 55px #0009,0 0 35px #287fd122}
-.card h3{color:#c6eaff}.card p{font-size:14px}
-.identity{margin-top:35px;padding:clamp(25px,4vw,46px);background:linear-gradient(140deg,#0c2b51df,#04122ce9);border:1px solid #609ad35a;border-radius:20px;box-shadow:0 25px 70px #0004}
-.identity h3{font-family:'Cinzel Decorative',serif!important;font-size:clamp(18px,2vw,24px);line-height:1.6}
-.identity strong{color:#d7f1ff}
-.cta{background:linear-gradient(120deg,#0c4273,#0a2549);border:1px solid #78c6ff99;box-shadow:0 0 32px #2678c84a;letter-spacing:.12em;font-size:11px;font-weight:700}
-.cta:hover{background:#144c81}
-.recipients-bottom{position:relative;z-index:2;max-width:1120px;margin:35px auto 0;padding:30px 24px 80px}
-.recipient-inner{position:relative;overflow:hidden;text-align:center;padding:55px 25px 60px;border-radius:24px;border:1px solid #6eb2ed60;background:radial-gradient(ellipse at 50% 0%,#174b79a3,transparent 72%),linear-gradient(145deg,#071d3a,#020b1c);box-shadow:0 20px 70px #0008,inset 0 1px #b9e6ff27}
-.recipient-inner:before{content:'✦';position:absolute;top:15px;right:28px;color:#8acaff77;font-size:24px}
-.recipient-inner h2{font-family:'Cinzel Decorative',serif;font-size:clamp(24px,3vw,36px);font-weight:400;color:#e2f3ff;margin:17px 0 29px;text-shadow:0 0 20px #63b7ff70}
-.recipient-names{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
-.recipient-names span{display:block;min-width:210px;padding:17px 26px;border:1px solid #76b8e857;border-radius:12px;background:#0b2b4b99;color:#e6f5ff;font:600 15px 'Manrope',sans-serif}
-.recipient-names small{display:block;font-size:11px;color:#93bbdf;font-weight:500;margin-top:5px}
-footer{background:#020817;border-top:1px solid #4e8ac13d}
-@media(max-width:600px){.wrap{padding-top:70px;padding-bottom:70px}.recipient-inner{padding:40px 18px}.recipient-names span{width:100%}}
-</style></head><body><canvas id="mist"></canvas><canvas id="embers"></canvas><div class="wandering-flames" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><header><div class="brand">✦ FLAMME SPECTRALE</div><nav><a href="#accueil">Accueil</a><a href="#pouvoir">Pouvoir</a><a href="#membres">Gérance</a><a href="#activites">Activités</a><a href="#archives">Archives</a></nav></header><main><section class="hero" id="accueil"><div class="seal" aria-hidden="true"><div class="flame-halo"></div><svg class="real-fire" viewBox="0 0 300 340" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="fireOuter" x1="0" y1="1" x2=".4" y2="0"><stop offset="0" stop-color="#bcffff"/><stop offset=".26" stop-color="#19dfff"/><stop offset=".64" stop-color="#077af0"/><stop offset="1" stop-color="#1730a4"/></linearGradient><linearGradient id="fireInner" x1=".4" y1="1" x2=".6" y2="0"><stop offset="0" stop-color="#fff"/><stop offset=".3" stop-color="#dcffff"/><stop offset=".7" stop-color="#5cefff"/><stop offset="1" stop-color="#1b9fff"/></linearGradient><filter id="fireGlow" x="-80%" y="-60%" width="260%" height="230%"><feGaussianBlur stdDeviation="10"/></filter><filter id="fireWarp" x="-30%" y="-20%" width="160%" height="145%"><feTurbulence type="fractalNoise" baseFrequency=".013 .029" numOctaves="2" seed="4" result="noise"><animate attributeName="baseFrequency" values=".013 .029;.021 .038;.013 .029" dur="2.3s" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="noise" scale="12" xChannelSelector="R" yChannelSelector="G"/></filter></defs><g class="fire-flicker"><path d="M146 24 C167 74 125 103 164 143 C165 106 199 83 195 47 C248 106 252 155 226 194 C272 159 267 132 262 113 C307 201 254 304 174 319 C79 340 21 280 39 206 C47 166 79 139 85 95 C100 139 93 170 111 190 C113 138 137 95 146 24 Z" fill="#18aaff" opacity=".75" filter="url(#fireGlow)"/><g filter="url(#fireWarp)"><path d="M146 24 C167 74 125 103 164 143 C165 106 199 83 195 47 C248 106 252 155 226 194 C272 159 267 132 262 113 C307 201 254 304 174 319 C79 340 21 280 39 206 C47 166 79 139 85 95 C100 139 93 170 111 190 C113 138 137 95 146 24 Z" fill="url(#fireOuter)"/><path d="M155 118 C169 159 149 177 169 204 C183 180 200 155 197 126 C234 188 233 223 211 258 C224 245 233 232 237 217 C244 278 208 316 158 320 C101 326 71 286 82 242 C91 265 104 267 111 271 C103 229 132 206 126 173 C146 196 147 217 150 227 C157 194 144 164 155 118 Z" fill="#22dfff"/><path d="M150 196 C162 219 146 237 164 252 C173 235 183 229 183 209 C208 244 208 277 188 299 C169 321 129 321 110 296 C94 274 111 253 116 241 C121 267 131 267 139 276 C132 249 147 230 150 196 Z" fill="url(#fireInner)"/></g></g></svg><div class="flame-spark s1"></div><div class="flame-spark s2"></div><div class="flame-spark s3"></div><div class="flame-spark s4"></div></div><div class="eyebrow">L'ESSENCE DES ÂMES PERDUES</div><h1>FLAMME <span>SPECTRALE</span></h1><p>Quand le feu rencontre l'au-delà, une puissance silencieuse s'éveille. Découvrez les archives de la Flamme Spectrale.</p><a class="cta" href="#pouvoir">ENTRER DANS LES ARCHIVES ↓</a></section><div class="line"></div><section id="pouvoir" class="wrap"><div class="kicker">01 / IDENTITÉ</div><h2>Un feu venu de l'ombre</h2><p class="lead">La Flamme Spectrale incarne une énergie surnaturelle aux reflets cyan et violets. Ses flammes semblent danser entre le monde visible et celui des esprits.</p><div class="identity"><div class="kicker">PERSONNAGE / FLAMME SPECTRALE</div><h3>Douzh — Démon de la Flamme Spectrale</h3><p>Je me nomme <strong>Douzh</strong>, démon de la <strong>Flamme Spectrale</strong>. Ma raison de vivre est de satisfaire le Maître et de servir ses ambitions avec une détermination sans faille.</p><h3>Mes objectifs</h3><p>Je souhaite devenir un démon réputé pour mon art à la <strong>Griffe</strong>, perfectionner ma maîtrise du combat et faire reconnaître mon talent. Mon ambition est également d’intégrer le <strong>cercle privé du Maître</strong> et de gagner sa confiance.</p></div><div class="grid"><article class="card"><div class="icon">🔥</div><h3>Flammes éthérées</h3><p>Une énergie fantomatique au cœur lumineux.</p></article><article class="card"><div class="icon">👁</div><h3>Aura spectrale</h3><p>Une présence mystérieuse qui imprègne chaque lieu.</p></article><article class="card"><div class="icon">✦</div><h3>Puissance occulte</h3><p>Une identité forgée dans les ténèbres et le feu.</p></article></div></section><div class="line"></div><section id="membres" class="wrap"><div class="kicker">02 / ORGANISATION</div><h2>Gérant et co-gérant</h2><div class="grid"><article class="card"><h3>Gérant</h3><p><strong>Son Excellence Suprême 6</strong></p><p><strong>Son Excellence 6</strong></p></article><article class="card"><h3>Co-gérant</h3><p><strong>Lucifero</strong></p></article></div></section><div class="line"></div><section id="activites" class="wrap"><div class="kicker">03 / REGISTRE</div><h2>Activités démoniaques</h2><div class="grid"><article class="card"><div class="icon">⚔</div><h3>Entraînements</h3><p>Suivi des entraînements et des participants.</p></article><article class="card"><div class="icon">◈</div><h3>Patrouilles</h3><p>Compte rendu des patrouilles réalisées.</p></article><article class="card"><div class="icon">✧</div><h3>Formations</h3><p>Progression et intégration des nouveaux membres.</p></article></div></section><div class="line"></div><section id="archives" class="banner"><div class="kicker">04 / MÉMOIRE DU POUVOIR</div><h2>Archives de la Flamme Spectrale</h2><p>Les rapports et récits seront conservés ici.</p></section></main><section class="recipients-bottom"><div class="recipient-inner"><div class="kicker">CORRESPONDANCE OFFICIELLE</div><h2>Destinataires</h2><div class="recipient-names"><span>Son Excellence 6</span><span>Lucifero <small>Co-gérant</small></span></div></div></section><footer><strong>✦ LA FLAMME SPECTRALE ✦</strong>Le feu des esprits ne s'éteint jamais.<br>Site RP non officiel.</footer><script>
-(()=>{const canvas=document.querySelector('#embers'),ctx=canvas.getContext('2d'),mist=document.querySelector('#mist'),mx=mist.getContext('2d');let w,h,embers=[];function resize(){w=innerWidth;h=innerHeight;const d=Math.min(devicePixelRatio||1,2);for(const c of [canvas,mist]){c.width=w*d;c.height=h*d;c.getContext('2d').setTransform(d,0,0,d,0,0)}embers=Array.from({length:90},()=>({x:Math.random()*w,y:Math.random()*h,r:.5+Math.random()*2.1,v:.3+Math.random()*1.1,a:.2+Math.random()*.6,hue:Math.random()>.4?175:268}))}resize();addEventListener('resize',resize);if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;function draw(t){ctx.clearRect(0,0,w,h);mx.clearRect(0,0,w,h);for(let i=0;i<7;i++){let x=w*(i/6)+Math.sin(t*.00016+i)*75,y=h*(.2+i%3*.27),r=140+50*(i%3);let g=mx.createRadialGradient(x,y,10,x,y,r);g.addColorStop(0,i%2?'rgba(89,71,145,.07)':'rgba(70,144,150,.075)');g.addColorStop(1,'transparent');mx.fillStyle=g;mx.fillRect(x-r,y-r,r*2,r*2)}for(const p of embers){p.y-=p.v;p.x+=Math.sin(t*.001+p.y*.01)*.18;if(p.y<-5){p.y=h+5;p.x=Math.random()*w}ctx.beginPath();ctx.fillStyle='hsla('+p.hue+',100%,77%,'+p.a+')';ctx.shadowBlur=13;ctx.shadowColor=p.hue===175?'#5dfff4':'#aa72ff';ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill()}ctx.shadowBlur=0;requestAnimationFrame(draw)}requestAnimationFrame(draw)})();
-</script></body></html>
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#030b19"><meta name="description" content="Archives de la Flamme Spectrale — Douzh, gérance et activités."><title>Flamme Spectrale | Les Archives</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#030917;--panel:#09172b;--line:rgba(121,184,244,.19);--ice:#d8f4ff;--muted:#92a9c5;--blue:#65c8ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:#ecf7ff;font-family:'DM Sans',sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}button{font:inherit}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse 65% 42% at 52% 10%,#1645796b,transparent 80%),radial-gradient(ellipse 50% 35% at 100% 75%,#0a2a5955,transparent 85%),linear-gradient(180deg,#040b19,#020714 65%,#030b19)}
+#stars{position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.5}
+header,main,footer{position:relative;z-index:2}
+header{position:sticky;top:0;z-index:20;backdrop-filter:blur(22px);background:#030c1bdc;border-bottom:1px solid var(--line)}
+.navwrap{max-width:1260px;margin:auto;padding:20px 34px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.logo{font:600 16px 'Cinzel',serif;letter-spacing:.13em;display:flex;align-items:center;gap:12px;white-space:nowrap}
+.logo-mark{width:32px;height:32px;border:1px solid #7fcfff88;border-radius:50%;display:grid;place-items:center;color:#a9e8ff;box-shadow:0 0 22px #2388e455}
+nav{display:flex;gap:29px;align-items:center}nav a{font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#b2c5db;transition:color .2s}nav a:hover{color:#fff}
+.hero{min-height:850px;min-height:min(900px,100svh);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:95px 22px 110px;isolation:isolate;overflow:hidden}
+.hero:before{content:"";position:absolute;width:800px;height:800px;top:2%;left:50%;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle,#156bb92e 0%,#0b438326 34%,transparent 68%);z-index:-1}
+.hero:after{content:"";position:absolute;bottom:0;left:0;right:0;height:180px;background:linear-gradient(transparent,var(--bg));pointer-events:none}
+.orb{width:310px;height:310px;position:relative;display:grid;place-items:center;margin-bottom:35px;filter:drop-shadow(0 0 50px #1689e877)}
+.orb-ring{position:absolute;width:275px;height:275px;border-radius:50%;border:1px solid #75caff40;box-shadow:0 0 55px #177ad332,inset 0 0 60px #177ad32a;background:radial-gradient(circle,#174b7945,#07192b4a 65%,transparent 73%)}
+.orb-ring:before,.orb-ring:after{content:"";position:absolute;inset:-17px;border-radius:50%;border:1px solid #6ba9dd25}.orb-ring:after{inset:20px;border-style:dashed;border-color:#80cfff24;animation:spin 45s linear infinite}
+.flame{width:250px;height:290px;position:relative;z-index:2;overflow:visible;filter:drop-shadow(0 0 17px #43caff) drop-shadow(0 0 48px #1686eb)}
+.fire-body{transform-origin:50% 88%;animation:flicker 2.4s ease-in-out infinite alternate}
+.fire-tip{transform-origin:50% 95%;animation:tip 1.8s ease-in-out infinite alternate}
+.ember{position:absolute;width:4px;height:10px;border-radius:100% 0 100% 0;background:#7ce7ff;box-shadow:0 0 15px #42bbff;animation:rise 4s ease-out infinite;opacity:0}
+.ember:nth-of-type(3){left:32%;top:44%;animation-delay:.1s}.ember:nth-of-type(4){left:64%;top:35%;animation-delay:1s}.ember:nth-of-type(5){left:48%;top:28%;animation-delay:2s}.ember:nth-of-type(6){left:74%;top:50%;animation-delay:3s}
+.eyebrow{color:#8fcef9;text-transform:uppercase;letter-spacing:.38em;font-size:10px;font-weight:700}
+h1,h2,h3{font-family:'Cinzel',serif;font-weight:500}h1{font-size:clamp(56px,8.4vw,112px);line-height:1.06;letter-spacing:.075em;margin:16px 0 23px;text-shadow:0 8px 55px #1a74c45b}h1 span{display:block;color:#9edcff}
+.hero-copy{max-width:540px;color:#afc5df;font-size:15px;line-height:1.9;margin:0}
+.primary{display:inline-flex;align-items:center;gap:18px;margin-top:32px;border:1px solid #7ecaff7a;padding:16px 24px;border-radius:3px;background:linear-gradient(115deg,#124777b0,#092a4eb0);color:#e4f7ff;text-transform:uppercase;font-size:11px;font-weight:700;letter-spacing:.17em;transition:.25s;box-shadow:0 0 32px #2a96ea22}
+.primary:hover{background:#15568b;transform:translateY(-3px);box-shadow:0 0 32px #2a96ea55}
+.scroll-indicator{position:absolute;bottom:27px;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:.28em;color:#7199bb;text-transform:uppercase}
+.container{max-width:1140px;margin:0 auto;padding:105px 30px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,#69b9ef45,transparent);max-width:1140px;margin:auto}
+.section-tag{font-size:10px;font-weight:700;color:#73bff3;letter-spacing:.32em;text-transform:uppercase;display:flex;align-items:center;gap:14px}.section-tag:before{content:"";width:26px;height:1px;background:#68baff}
+.section-head{max-width:780px;margin-bottom:45px}h2{font-size:clamp(31px,4.2vw,52px);line-height:1.25;margin:20px 0 16px;letter-spacing:.02em}p{color:var(--muted);line-height:1.85;font-size:14px}.section-head p{font-size:15px}
+.identity-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:22px}
+.panel{background:linear-gradient(145deg,#0c223bdf,#061225ef);border:1px solid var(--line);border-radius:7px;padding:38px;position:relative;overflow:hidden;box-shadow:0 24px 60px #0003}
+.panel:before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#81d5ff65,transparent)}
+.panel-label{color:#6fbbe9;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+.panel h3{font-size:clamp(20px,2.2vw,29px);line-height:1.4;margin:20px 0}.panel p{margin-bottom:0}.panel strong{color:#e1f5ff}
+.quote-panel{display:flex;flex-direction:column;justify-content:center;background:radial-gradient(ellipse at 90% 0%,#1c578054,transparent 60%),linear-gradient(145deg,#0b1c32,#061225)}
+.quote-panel .glyph{font:400 90px 'Cinzel',serif;color:#3d9bdf6e;line-height:.8}
+.quote-panel p{font:400 clamp(18px,2vw,24px)/1.75 'Cinzel',serif;color:#d7eaff}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:22px}
+.feature{padding:29px;border:1px solid var(--line);border-radius:6px;background:#09182cb5;transition:transform .25s,border-color .25s}.feature:hover{transform:translateY(-5px);border-color:#71c3fa85}
+.feature .symbol{display:block;color:#7bcfff;font:400 29px 'Cinzel',serif;margin-bottom:22px}.feature h3{font-size:16px;margin:0 0 10px}.feature p{font-size:13px;margin:0}
+.management{display:grid;grid-template-columns:1fr 1fr;gap:20px}.role{padding:40px;border:1px solid var(--line);background:linear-gradient(135deg,#0c2644,#07152a);border-radius:6px;min-height:205px}.role .number{color:#3d7cac;font:400 42px 'Cinzel',serif;line-height:1}.role h3{margin:20px 0 14px;font-size:22px}.role p{color:#d5e9f8;font-size:15px;margin:6px 0}
+.activity{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.activity article{min-height:230px;padding:32px;background:linear-gradient(155deg,#0d2440bb,#051024c9);border:1px solid var(--line);border-radius:6px}.activity .num{color:#4d94c8;font:400 38px 'Cinzel',serif}.activity h3{font-size:18px;margin:25px 0 12px}.activity p{font-size:13px;margin:0}
+.archive{max-width:1140px;margin:25px auto 0;padding:80px 35px;text-align:center;border:1px solid #5d9ac33b;background:radial-gradient(ellipse at 50% 0%,#13487d75,transparent 68%),#06152b;border-radius:7px}.archive h2{margin:16px 0}.archive p{margin:0 auto;max-width:500px}
+.recipients{max-width:1140px;margin:90px auto 100px;padding:0 30px}.recipient-box{border-top:1px solid #72b8eb60;border-bottom:1px solid #72b8eb60;padding:40px 0;display:flex;align-items:center;justify-content:space-between;gap:28px}.recipient-box h2{font-size:clamp(24px,3vw,37px);margin:10px 0}.names{display:flex;gap:12px;flex-wrap:wrap}.names span{border:1px solid #5f9aca60;padding:16px 24px;background:#0c2441b0;color:#d9efff;font-size:13px;font-weight:600}.names small{display:block;font-size:10px;color:#86b6d7;margin-top:5px}
+footer{border-top:1px solid var(--line);padding:35px 24px;text-align:center;color:#708eae;font-size:11px;letter-spacing:.13em}footer strong{display:block;color:#bddff6;font:500 16px 'Cinzel',serif;margin-bottom:9px}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes flicker{0%{transform:rotate(-2deg) scaleX(.96) scaleY(1)}50%{transform:rotate(2deg) scaleX(1.03) scaleY(1.04)}100%{transform:rotate(-1deg) scaleX(.98) scaleY(.98)}}@keyframes tip{to{transform:translateX(7px) rotate(3deg)}}@keyframes rise{0%{opacity:0;transform:translate(0,0) scale(.5)}20%{opacity:.9}100%{opacity:0;transform:translate(23px,-125px) scale(.2)}}
+@media(max-width:850px){.navwrap{padding:17px 22px;flex-wrap:wrap;justify-content:center}nav{gap:16px;justify-content:center;flex-wrap:wrap}.hero{min-height:760px}.identity-layout{grid-template-columns:1fr}.three,.activity{grid-template-columns:1fr 1fr}.recipient-box{align-items:flex-start;flex-direction:column}}
+@media(max-width:570px){.logo{font-size:13px}.navwrap{padding:16px}nav{gap:13px}nav a{font-size:10px}.hero{min-height:730px;padding:60px 16px 100px}.orb{transform:scale(.84);margin-bottom:0}h1{font-size:clamp(45px,12vw,66px);letter-spacing:.025em}.eyebrow{letter-spacing:.2em}.container{padding:75px 20px}.panel{padding:26px}.three,.activity,.management{grid-template-columns:1fr}.archive{margin:20px;padding:65px 22px}.recipients{padding:0 20px;margin:75px auto}.names{width:100%}.names span{width:100%}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+</style></head><body><canvas id="stars" aria-hidden="true"></canvas>
+<header><div class="navwrap"><a href="#accueil" class="logo"><span class="logo-mark">✦</span> FLAMME SPECTRALE</a><nav aria-label="Navigation principale"><a href="#pouvoir">Le pouvoir</a><a href="#gerance">Gérance</a><a href="#activites">Activités</a><a href="#archives">Archives</a></nav></div></header>
+<main><section class="hero" id="accueil"><div class="orb" aria-hidden="true"><div class="orb-ring"></div>
+<svg class="flame" viewBox="0 0 260 300" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="outer" x1="0" y1="1" x2=".65" y2="0"><stop stop-color="#c6ffff"/><stop offset=".22" stop-color="#23d5ff"/><stop offset=".62" stop-color="#0a77e3"/><stop offset="1" stop-color="#12358d"/></linearGradient><linearGradient id="inner" x1="0" y1="1" x2=".6" y2="0"><stop stop-color="#fff"/><stop offset=".45" stop-color="#b8faff"/><stop offset="1" stop-color="#1dbaff"/></linearGradient><filter id="warp"><feTurbulence type="fractalNoise" baseFrequency=".014 .032" numOctaves="2" seed="3" result="noise"><animate attributeName="baseFrequency" values=".014 .032;.022 .043;.014 .032" dur="2.6s" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
+<g class="fire-body" filter="url(#warp)"><path d="M130 7C157 62 111 92 148 131C157 94 190 74 184 37C229 90 236 135 211 179C241 155 244 130 236 109C288 190 245 278 158 290C76 304 19 252 35 182C44 142 76 119 77 85C100 132 90 153 106 178C104 127 122 77 130 7Z" fill="url(#outer)"/><path d="M131 98C146 142 128 157 145 185C159 157 174 149 171 117C206 165 207 206 188 238C208 222 214 204 214 190C227 247 181 291 130 291C79 291 55 251 72 211C80 234 94 246 102 247C92 210 117 185 111 155C127 179 131 197 131 213C140 181 120 152 131 98Z" fill="#30d6ff"/><path d="M133 179C143 205 130 224 146 236C156 219 161 205 158 194C183 227 182 258 160 277C142 294 111 290 97 271C84 251 96 232 103 219C107 242 118 249 126 254C118 229 128 205 133 179Z" fill="url(#inner)"/></g></svg>
+<i class="ember"></i><i class="ember"></i><i class="ember"></i><i class="ember"></i></div>
+<div class="eyebrow">Le feu au-delà du monde visible</div><h1>FLAMME<span>SPECTRALE</span></h1><p class="hero-copy">Une flamme qui ne connaît ni le temps ni l'oubli. Dans l'obscurité, sa lumière révèle une puissance venue d'ailleurs.</p><a class="primary" href="#pouvoir">Découvrir les archives <span aria-hidden="true">↗</span></a><div class="scroll-indicator">Défiler pour explorer ↓</div></section>
+<div class="divider"></div><section class="container" id="pouvoir"><div class="section-head"><div class="section-tag">01 / Identité</div><h2>L'essence de la<br>Flamme Spectrale</h2><p>Un pouvoir dont les flammes bleues traversent l'ombre, à la frontière du visible et de l'inconnu.</p></div>
+<div class="identity-layout"><article class="panel"><div class="panel-label">Le porteur du pouvoir</div><h3>Douzh<br><span style="color:#8fd2ff">Démon de la Flamme Spectrale</span></h3><p>Je me nomme <strong>Douzh</strong>, démon de la <strong>Flamme Spectrale</strong>. Ma raison de vivre est de satisfaire le Maître et de servir ses ambitions avec une détermination sans faille.</p></article><article class="panel quote-panel"><div class="glyph">“</div><p>La flamme spectrale ne s'éteint jamais. Elle attend, silencieuse, dans l'obscurité.</p></article></div>
+<div class="panel" style="margin-top:22px"><div class="panel-label">Les ambitions de Douzh</div><h3>Mes objectifs</h3><p>Je souhaite devenir un démon réputé pour mon art à la <strong>Griffe</strong>, perfectionner ma maîtrise du combat et faire reconnaître mon talent. Mon ambition est également d’intégrer le <strong>cercle privé du Maître</strong> et de gagner sa confiance.</p></div>
+<div class="three"><article class="feature"><span class="symbol">✧</span><h3>Flammes éthérées</h3><p>Une énergie fantomatique au cœur lumineux.</p></article><article class="feature"><span class="symbol">◇</span><h3>Aura spectrale</h3><p>Une présence mystérieuse qui imprègne chaque lieu.</p></article><article class="feature"><span class="symbol">✦</span><h3>Puissance occulte</h3><p>Une identité forgée dans les ténèbres et le feu.</p></article></div></section>
+<div class="divider"></div><section class="container" id="gerance"><div class="section-head"><div class="section-tag">02 / Organisation</div><h2>Gérant &amp; co-gérant</h2></div><div class="management"><article class="role"><div class="number">01</div><h3>Gérant</h3><p>Son Excellence Suprême 6</p><p>Son Excellence 6</p></article><article class="role"><div class="number">02</div><h3>Co-gérant</h3><p>Lucifero</p></article></div></section>
+<div class="divider"></div><section class="container" id="activites"><div class="section-head"><div class="section-tag">03 / Registre</div><h2>Activités démoniaques</h2><p>Les activités et les progrès du pouvoir sont conservés dans les registres.</p></div><div class="activity"><article><div class="num">I</div><h3>Entraînements</h3><p>Suivi des entraînements et des participants.</p></article><article><div class="num">II</div><h3>Patrouilles</h3><p>Compte rendu des patrouilles réalisées.</p></article><article><div class="num">III</div><h3>Formations</h3><p>Progression et intégration des nouveaux démons.</p></article></div></section>
+<section class="archive" id="archives"><div class="section-tag" style="justify-content:center">04 / Mémoire du pouvoir</div><h2>Les archives spectrales</h2><p>Les rapports et récits du pouvoir seront conservés ici, dans la mémoire de la Flamme Spectrale.</p></section></main>
+<section class="recipients" aria-labelledby="destinataires"><div class="recipient-box"><div><div class="section-tag">Correspondance officielle</div><h2 id="destinataires">Destinataires</h2></div><div class="names"><span>Son Excellence 6</span><span>Lucifero<small>Co-gérant</small></span></div></div></section>
+<footer><strong>✦ Flamme Spectrale ✦</strong>Le feu des esprits ne s'éteint jamais. · Site RP non officiel</footer>
+<script>(()=>{const canvas=document.getElementById('stars');const ctx=canvas.getContext('2d');if(!ctx)return;let w,h,points=[];function resize(){w=innerWidth;h=innerHeight;const d=Math.min(devicePixelRatio||1,2);canvas.width=w*d;canvas.height=h*d;ctx.setTransform(d,0,0,d,0,0);points=Array.from({length:Math.min(85,Math.round(w*h/12000))},()=>({x:Math.random()*w,y:Math.random()*h,r:.4+Math.random()*1.4,s:.12+Math.random()*.4,a:.15+Math.random()*.55}))}resize();addEventListener('resize',resize);if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;function frame(){ctx.clearRect(0,0,w,h);for(const p of points){p.y-=p.s;if(p.y<0)p.y=h;ctx.beginPath();ctx.fillStyle='rgba(125,207,255,'+p.a+')';ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill()}requestAnimationFrame(frame)}requestAnimationFrame(frame)})();</script></body></html>
